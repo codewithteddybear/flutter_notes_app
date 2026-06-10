@@ -1,4 +1,3 @@
-import 'package:flutter_notes_app/core/types/type_aliases.dart';
 import 'package:flutter_notes_app/features/note/domain/entities/note.dart';
 
 abstract interface class NoteRepo {
@@ -7,7 +6,11 @@ abstract interface class NoteRepo {
   Future deleteNote(int noteId);
 
   // GET DATA
-  FutureListOf<NoteEntity> getAllNotes();
-  FutureListOf<NoteEntity> getNotesByCategory();
-  FutureListOf<NoteEntity> getFavoriteNotes();
+  // FIRST LIST CONTAINS PINNED ENTITIES
+  // SECOND LIST CONTAINS ENTITIES
+  Future<(List<NoteEntity>, List<NoteEntity>)> getAllNotes();
+  Future<(List<NoteEntity>, List<NoteEntity>)> getNotesByCategory(
+    int categoryId,
+  );
+  Future<(List<NoteEntity>, List<NoteEntity>)> getFavoriteNotes();
 }

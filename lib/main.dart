@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_notes_app/config/theme/app_theme.dart';
 import 'package:flutter_notes_app/home/presentation/pages/home_page.dart';
+import 'package:flutter_notes_app/injection_container.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initializeDependencies();
+
   runApp(const MyApp());
 }
 
