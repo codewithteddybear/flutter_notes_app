@@ -1,30 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_notes_app/config/theme/text_styles.dart';
 
 import 'style_constants.dart';
 import 'app_colors.dart';
 
 class AppTheme {
-  static final colorScheme = ColorScheme.dark(
-    primary: AppColors.primary,
-    surface: AppColors.primaryDarkColor,
+  static final darkColorScheme = ColorScheme.dark(
+    primary: DarkAppColors.primaryDarkColor,
+    secondary: DarkAppColors.secondary,
+    surface: DarkAppColors.primaryDarkColor,
   );
 
   static final ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    colorScheme: colorScheme,
+    colorScheme: darkColorScheme,
 
     // [panara_dialogs] theme depends on these
-    dialogBackgroundColor: AppColors.primaryDarkColor,
-    buttonTheme: ButtonThemeData(colorScheme: colorScheme),
+    dialogBackgroundColor: DarkAppColors.primaryDarkColor,
     hintColor: Colors.grey,
     appBarTheme: AppBarTheme(
-      backgroundColor: AppColors.secondaryDarkColor,
+      backgroundColor: DarkAppColors.secondaryDarkColor,
       scrolledUnderElevation: 0,
     ),
     useMaterial3: true,
-    primaryColor: AppColors.primary,
-    primaryColorDark: AppColors.primaryDarkColor,
-    scaffoldBackgroundColor: AppColors.secondaryDarkColor,
+    primaryColor: DarkAppColors.primaryDarkColor,
+    primaryColorDark: DarkAppColors.primaryDarkColor,
+    scaffoldBackgroundColor: DarkAppColors.secondaryDarkColor,
+    textTheme: textTheme,
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      foregroundColor: Colors.black,
+      backgroundColor: DarkAppColors.secondary,
+    ),
     iconTheme: const IconThemeData(
       color: Colors.white,
       size: StyleConstants.iconSize,
